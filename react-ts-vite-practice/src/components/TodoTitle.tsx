@@ -9,4 +9,5 @@ export default function TodoTitle(props: IAppProps) {
 
 const titleWrapper = css`
   color: #66dd9c;
+  font-weight: bold;
 `;

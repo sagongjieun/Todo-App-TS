@@ -5,10 +5,24 @@ import TodoListItem from "./TodoListItem";
 
 export interface IAppProps {}
 
-export default function TodoList(props: IAppProps) {
-  const [todoList, setTodoList] = useState<string[]>([]);
+interface todoListProps {
+  id: number;
+  todo: string;
+}
 
-  return <div css={listWrapper}></div>;
+export default function TodoList(props: IAppProps) {
+  const [todoList, setTodoList] = useState<todoListProps[]>([
+    { id: 1, todo: "task1" },
+    { id: 2, todo: "task2" },
+  ]);
+
+  return (
+    <div css={listWrapper}>
+      {todoList.map((todo) => (
+        <TodoListItem key={todo.id} todo={todo.todo} />
+      ))}
+    </div>
+  );
 }
 
 const listWrapper = css`
