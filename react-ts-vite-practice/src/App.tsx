@@ -9,7 +9,7 @@ export interface IAppProps {}
 
 export default function App(props: IAppProps) {
   return (
-    <div css={wrapper}>
+    <div css={mainWrapperWrapper}>
       <div css={mainWrapper}>
         <TodoTitle />
         <TodoInput />
@@ -21,24 +21,24 @@ export default function App(props: IAppProps) {
   );
 }
 
-const wrapper = css`
-  position: absolute;
+const mainWrapperWrapper = css`
+  height: 100vh;
 `;
 
 const mainWrapper = css`
+  position: absolute;
+  left: calc(50% - 807px / 2);
+  top: calc(50% - 670px / 2);
   width: 807px;
   height: 670px;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  /* margin: 0 auto; */
+  margin: auto auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
-  position: relative;
-  top: 50%;
-  left: 50%;
 `;
 
 const divideLine = css`

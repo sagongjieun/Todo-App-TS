@@ -16,8 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["@emotion/react/types/css-prop"],
-    "jsxImportSource": "@emotion/react",
-    "typeRoots": ["src/assets/images"]
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

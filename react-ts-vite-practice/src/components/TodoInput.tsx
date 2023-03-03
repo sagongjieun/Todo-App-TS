@@ -1,10 +1,16 @@
-import * as React from "react";
+import { useState } from "react";
 import { css } from "@emotion/react";
 
 export interface IAppProps {}
 
 export default function TodoInput(props: IAppProps) {
-  return <input css={inputWrapper} placeholder="Add a task ..." />;
+  const [todo, setTodo] = useState<string>("");
+
+  const onChangeTodo = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTodo(e.target.value);
+  };
+
+  return <input css={inputWrapper} placeholder="Add a task ..." value={todo} onChange={(e) => onChangeTodo(e)} />;
 }
 
 const inputWrapper = css`
