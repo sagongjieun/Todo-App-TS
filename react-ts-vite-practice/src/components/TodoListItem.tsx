@@ -1,7 +1,7 @@
 import * as React from "react";
 import { css } from "@emotion/react";
-import modifyButton from "../assets/images/modifyButton.png";
-import deleteButton from "../assets/images/deleteButton.png";
+import modifyButton from "./../assets/images/modifyButton.png";
+import deleteButton from "./../assets/images/deleteButton.png";
 
 export interface IAppProps {
   todo: string;
