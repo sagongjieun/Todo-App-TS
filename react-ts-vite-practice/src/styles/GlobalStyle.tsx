@@ -21,19 +21,4 @@ const globalStyle = css`
   body {
     background-color: #edebeb;
   }
-
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background-color: initial;
-    border-radius: 10px;
-  }
 `;

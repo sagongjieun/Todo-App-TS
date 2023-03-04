@@ -2,17 +2,19 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import modifyButton from "./../assets/images/modifyButton.png";
 import deleteButton from "./../assets/images/deleteButton.png";
+import { ITodoTypes } from "../recoil/atom";
 
-export interface IAppProps {
-  todo: string;
+export interface ITodoListItemProps {
+  key: number;
+  todo: ITodoTypes;
 }
 
-export default function TodoListItem(props: IAppProps) {
+export default function TodoListItem(props: ITodoListItemProps) {
   return (
     <div css={listItemWrapper}>
       <div css={leftSection}>
         <input type="checkbox" />
-        <span>{props.todo}</span>
+        <span>{props.todo.contents}</span>
       </div>
       <div css={rightSection}>
         <img src={modifyButton} />
@@ -45,7 +47,7 @@ const leftSection = css`
   }
 
   > span {
-    font-size: 20px;
+    font-size: 18px;
     color: #000000;
   }
 `;
@@ -54,11 +56,12 @@ const rightSection = css`
   display: flex;
   align-items: center;
 
-  > img:nth-of-type(1) {
+  /* > img:nth-of-type(1) {
     margin-right: 15px;
-  }
+  } */
 
   > img {
+    margin-right: 15px;
     width: 18px;
     height: 18px;
     cursor: pointer;

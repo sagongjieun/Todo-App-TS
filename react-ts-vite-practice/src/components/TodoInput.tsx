@@ -1,16 +1,44 @@
 import { useState } from "react";
 import { css } from "@emotion/react";
+import { useRecoilState } from "recoil";
+import { ITodoTypes, todoState } from "../recoil/atom";
 
 export interface IAppProps {}
 
 export default function TodoInput(props: IAppProps) {
-  const [todo, setTodo] = useState<string>("");
+  const [content, setContent] = useState<string>("");
+  const [todo, setTodo] = useRecoilState<ITodoTypes[]>(todoState);
 
-  const onChangeTodo = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTodo(e.target.value);
+  const onChangeTodo = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setContent(e.target.value);
   };
 
-  return <input css={inputWrapper} placeholder="Add a task ..." value={todo} onChange={(e) => onChangeTodo(e)} />;
+  const onKeyDownSendTodo = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (e.key === "Enter") {
+      const nextId = todo.length > 0 ? todo[todo.length - 1].id + 1 : 0;
+
+      setTodo([
+        ...todo,
+        {
+          id: nextId,
+          contents: content,
+          isComplete: false,
+        },
+      ]);
+
+      setContent("");
+    }
+  };
+
+  return (
+    <input
+      css={inputWrapper}
+      placeholder="Add a task ..."
+      value={content}
+      onChange={(e) => onChangeTodo(e)}
+      onKeyDown={(e) => onKeyDownSendTodo(e)}
+    />
+  );
 }
 
 const inputWrapper = css`
