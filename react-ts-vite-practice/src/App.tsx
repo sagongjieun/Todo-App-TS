@@ -12,7 +12,7 @@ export default function App(props: IAppProps) {
   return (
     <RecoilRoot>
       <div css={mainWrapper}>
-        <TodoTitle />
+        <TodoTitle titleColor="#66dd9c" />
         <TodoInput />
         <TodoToggle />
         <div css={divideLine}></div>

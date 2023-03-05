@@ -1,9 +1,7 @@
 import * as React from "react";
 import { Global, css } from "@emotion/react";
 
-export interface IAppProps {}
-
-export default function GlobalStyle(props: IAppProps) {
+export default function GlobalStyle() {
   return <Global styles={globalStyle} />;
 }
 

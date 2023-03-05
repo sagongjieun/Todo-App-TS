@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { css } from "@emotion/react";
 import TodoListItem from "./TodoListItem";
 import { useRecoilValue } from "recoil";
@@ -10,13 +9,9 @@ export default function TodoList() {
 
   return (
     <div css={listWrapper}>
-      {todoList && todoList.length > 0 && (
-        <>
-          {todoList.map((todo) => (
-            <TodoListItem key={todo.id} todo={todo} />
-          ))}
-        </>
-      )}
+      {todoList &&
+        todoList.length > 0 &&
+        todoList.map((todo: ITodoTypes) => <TodoListItem key={todo.id} todo={todo} />)}
     </div>
   );
 }

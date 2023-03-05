@@ -14,14 +14,14 @@ export default function TodoListItem(props: ITodoListItemProps) {
   const [todo, setTodo] = useRecoilState<ITodoTypes[]>(todoState);
   const [modifyMode, setModifyMode] = useState<boolean>(false);
   const [newContent, setNewContent] = useState<string>(props.todo.contents);
-  const index = todo.findIndex((listItem) => listItem === props.todo);
+  const index: number = todo.findIndex((listItem) => listItem === props.todo);
 
   const onClickModifyTodo = (): void => {
     setModifyMode(!modifyMode);
   };
 
   const onClickDeleteTodo = (): void => {
-    const newList = [...todo.slice(0, index), ...todo.slice(index + 1)];
+    const newList: ITodoTypes[] = [...todo.slice(0, index), ...todo.slice(index + 1)];
     setTodo(newList);
   };
 
@@ -31,12 +31,12 @@ export default function TodoListItem(props: ITodoListItemProps) {
 
   const onKeyDownEnter = (e: React.KeyboardEvent<HTMLInputElement>, id: number): void => {
     if (e.key === "Enter") {
-      const modifiedTodo = {
+      const modifiedTodo: ITodoTypes = {
         ...props.todo,
         contents: newContent,
       };
 
-      const newList = [...todo.slice(0, index), modifiedTodo, ...todo.slice(index + 1)];
+      const newList: ITodoTypes[] = [...todo.slice(0, index), modifiedTodo, ...todo.slice(index + 1)];
       setTodo(newList);
 
       setModifyMode(!modifyMode);
@@ -44,12 +44,12 @@ export default function TodoListItem(props: ITodoListItemProps) {
   };
 
   const onChangeToggleState = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const toggleTodo = {
+    const toggleTodo: ITodoTypes = {
       ...props.todo,
       isComplete: e.target.checked,
     };
 
-    const newList = [...todo.slice(0, index), toggleTodo, ...todo.slice(index + 1)];
+    const newList: ITodoTypes[] = [...todo.slice(0, index), toggleTodo, ...todo.slice(index + 1)];
     setTodo(newList);
   };
 

@@ -1,11 +1,15 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 
-export default function TodoTitle() {
-  return <h1 css={titleWrapper}>To Do List</h1>;
+export interface ITodoTitleProps {
+  titleColor: string;
 }
 
-const titleWrapper = css`
-  color: #66dd9c;
+export default function TodoTitle(props: ITodoTitleProps) {
+  return <h1 css={titleWrapper(props.titleColor)}>To Do List</h1>;
+}
+
+const titleWrapper = (props: string) => css`
+  color: ${props};
   font-weight: bold;
 `;

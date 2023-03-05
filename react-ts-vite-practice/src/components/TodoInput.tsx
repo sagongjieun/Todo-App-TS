@@ -13,7 +13,7 @@ export default function TodoInput() {
 
   const onKeyDownSendTodo = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === "Enter") {
-      const nextId = todo.length > 0 ? todo[todo.length - 1].id + 1 : 0;
+      const nextId: number = todo.length > 0 ? todo[todo.length - 1].id + 1 : 0;
 
       setTodo([
         ...todo,
