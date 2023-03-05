@@ -1,16 +1,21 @@
-import * as React from "react";
+import { useEffect } from "react";
 import { css } from "@emotion/react";
 import TodoListItem from "./TodoListItem";
 import { useRecoilValue } from "recoil";
-import { ITodoTypes, todoState } from "../recoil/atom";
+import { ITodoTypes } from "../recoil/atom";
+import { filteredTodoListState } from "../recoil/selector";
 
 export default function TodoList() {
-  const todoList = useRecoilValue<ITodoTypes[]>(todoState);
+  const todoList = useRecoilValue<ITodoTypes[] | undefined>(filteredTodoListState);
 
   return (
     <div css={listWrapper}>
-      {todoList.length > 1 && (
-        <>{todoList.map((todo) => todo.id !== 0 && <TodoListItem key={todo.id} todo={todo} />)}</>
+      {todoList && todoList.length > 0 && (
+        <>
+          {todoList.map((todo) => (
+            <TodoListItem key={todo.id} todo={todo} />
+          ))}
+        </>
       )}
     </div>
   );

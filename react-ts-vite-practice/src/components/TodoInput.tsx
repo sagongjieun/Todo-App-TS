@@ -3,9 +3,7 @@ import { css } from "@emotion/react";
 import { useRecoilState } from "recoil";
 import { ITodoTypes, todoState } from "../recoil/atom";
 
-export interface IAppProps {}
-
-export default function TodoInput(props: IAppProps) {
+export default function TodoInput() {
   const [content, setContent] = useState<string>("");
   const [todo, setTodo] = useRecoilState<ITodoTypes[]>(todoState);
 

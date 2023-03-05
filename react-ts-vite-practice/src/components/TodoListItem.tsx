@@ -43,16 +43,28 @@ export default function TodoListItem(props: ITodoListItemProps) {
     }
   };
 
+  const onChangeToggleState = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const toggleTodo = {
+      ...props.todo,
+      isComplete: e.target.checked,
+    };
+
+    const newList = [...todo.slice(0, index), toggleTodo, ...todo.slice(index + 1)];
+    setTodo(newList);
+  };
+
   return (
     <div css={listItemWrapper}>
       <div css={leftSection}>
-        <input type="checkbox" />
+        <input type="checkbox" onChange={(e) => onChangeToggleState(e)} />
         {modifyMode ? (
           <input
             placeholder={props.todo.contents}
             onChange={(e) => onChangeTodo(e)}
             onKeyDown={(e) => onKeyDownEnter(e, props.todo.id)}
           />
+        ) : props.todo.isComplete ? (
+          <del>{props.todo.contents}</del>
         ) : (
           <span>{props.todo.contents}</span>
         )}
@@ -79,8 +91,8 @@ const leftSection = css`
 
   > input:nth-of-type(1) {
     margin-right: 15px;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     background: #ffffff;
     border: 2px solid #66dd9c;
     border-radius: 5px;
@@ -100,6 +112,12 @@ const leftSection = css`
   > span {
     font-size: 18px;
     color: #000000;
+  }
+
+  > del {
+    font-size: 18px;
+    color: #000000;
+    text-decoration: line-through;
   }
 `;
 

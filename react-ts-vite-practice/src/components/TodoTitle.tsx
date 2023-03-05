@@ -1,9 +1,7 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 
-export interface IAppProps {}
-
-export default function TodoTitle(props: IAppProps) {
+export default function TodoTitle() {
   return <h1 css={titleWrapper}>To Do List</h1>;
 }
 

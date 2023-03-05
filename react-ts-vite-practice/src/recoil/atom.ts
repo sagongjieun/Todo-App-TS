@@ -8,11 +8,10 @@ export interface ITodoTypes {
 
 export const todoState = atom<ITodoTypes[]>({
   key: "todoState",
-  default: [
-    {
-      id: 0,
-      contents: "",
-      isComplete: false,
-    },
-  ],
+  default: [],
+});
+
+export const todoListFilterState = atom<string>({
+  key: "todoListFilterState",
+  default: "All",
 });

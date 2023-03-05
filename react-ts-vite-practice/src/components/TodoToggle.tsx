@@ -1,13 +1,32 @@
-import * as React from "react";
+import { useEffect } from "react";
 import { css } from "@emotion/react";
+import { useRecoilState } from "recoil";
+import { todoListFilterState } from "../recoil/atom";
 
-export interface IAppProps {}
+export default function TodoToggle() {
+  const [todoListFilter, setTodoListFilter] = useRecoilState<string>(todoListFilterState);
 
-export default function TodoToggle(props: IAppProps) {
+  const onClickToggleFilter = (filter: string): void => {
+    setTodoListFilter(filter);
+  };
+
   return (
     <div css={toggleButtonWrapper}>
-      <button>All</button>
-      <button>Completed</button>
+      {todoListFilter === "All" ? (
+        <>
+          <button css={chosenFilter} onClick={() => onClickToggleFilter("All")}>
+            All
+          </button>
+          <button onClick={() => onClickToggleFilter("Completed")}>Completed</button>
+        </>
+      ) : (
+        <>
+          <button onClick={() => onClickToggleFilter("All")}>All</button>
+          <button css={chosenFilter} onClick={() => onClickToggleFilter("Completed")}>
+            Completed
+          </button>
+        </>
+      )}
     </div>
   );
 }
@@ -24,13 +43,9 @@ const toggleButtonWrapper = css`
     margin-right: 20px;
     font-size: 18px;
   }
+`;
 
-  > button:nth-of-type(1) {
-    color: #66dd9c;
-    font-weight: bold;
-  }
-
-  > button:nth-of-type(2) {
-    color: #989595;
-  }
+const chosenFilter = css`
+  color: #66dd9c;
+  font-weight: bold;
 `;
