@@ -21,6 +21,10 @@ const listWrapper = css`
   height: 320px;
   overflow-y: scroll;
 
+  @media (max-width: 900px) {
+    width: 468px;
+  }
+
   ::-webkit-scrollbar {
     width: 4px;
     height: 10px;

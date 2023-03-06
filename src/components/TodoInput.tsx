@@ -53,4 +53,8 @@ const inputWrapper = css`
   ::placeholder {
     color: #989595;
   }
+
+  @media (max-width: 900px) {
+    width: 468px;
+  }
 `;

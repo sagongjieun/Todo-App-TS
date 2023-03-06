@@ -107,6 +107,10 @@ const leftSection = css`
     outline: none;
     width: 550px;
     padding: 6px 0;
+
+    @media (max-width: 900px) {
+      width: 310px;
+    }
   }
 
   > span {
