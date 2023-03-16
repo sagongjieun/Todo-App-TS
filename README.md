@@ -10,7 +10,7 @@
 * media query를 이용해 반응형 웹 연습을 하였습니다.
 
 ## 기술 스택
-> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/Recoil-3578E5?style=flat-square&logo=Recoil&logoColor=white"/> <img src="https://img.shields.io/badge/Emotion-d36ac2?style=flat-square&logo=Emotion&logoColor=white"/>
+> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=Recoil&logoColor=white"/> <img src="https://img.shields.io/badge/Emotion-d36ac2?style=for-the-badge&logo=Emotion&logoColor=white"/>
 
 ## 앱 이미지
 #### 900px 이상의 화면 / 모든 todo
