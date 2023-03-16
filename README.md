@@ -12,8 +12,6 @@
 ## 기술 스택
 > <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=Recoil&logoColor=white"/> <img src="https://img.shields.io/badge/Emotion-d36ac2?style=for-the-badge&logo=Emotion&logoColor=white"/>
 
-## 앱 이미지
-#### 900px 이상의 화면 / 모든 todo
-![todo](https://user-images.githubusercontent.com/72495712/223184794-c37188a9-4d69-4c85-b79d-1f77db09ba50.png)
-#### 900px 미만의 화면 / 완료된 todo
-![todo-responsive](https://user-images.githubusercontent.com/72495712/223184812-a9da578f-b403-4b13-a620-3476004b8795.png)
+## 앱 레이아웃 및 기능
+
+![todo](https://user-images.githubusercontent.com/72495712/225654505-b80c8630-3fc7-47b4-a39e-70a232d8976b.gif)
